@@ -4,6 +4,7 @@
 	"description": "this extension will save the alx schedules to google calender",
 	"version": "0.1.0",
 	"permissions": ["tabs"],
+	"host_permissions": ["https://*intranet.alxswe.com/planning/me"],
 	"background": {
 		"service_worker": "background.js"
 	  },
