@@ -8,6 +8,12 @@
 	"background": {
 		"service_worker": "background.js"
 	  },
+	  "content_scripts": [
+		{
+		  "matches": ["https://*intranet.alxswe.com/planning/me"],
+		  "js": ["contentScript.js"]
+		}
+	  ],
 	"action": {
 		"default_icon": {
 		  "16": "img/icon.png",
