@@ -4,6 +4,9 @@
 	"description": "this extension will save the alx schedules to google calender",
 	"version": "0.1.0",
 	"permissions": ["tabs"],
+	"background": {
+		"service_worker": "background.js"
+	  },
 	"action": {
 		"default_icon": {
 		  "16": "img/icon.png",
