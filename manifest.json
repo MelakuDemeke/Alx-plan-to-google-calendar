@@ -7,7 +7,7 @@
 	"content_scripts": [
 		{
 		  "matches": ["https://intranet.alxswe.com/planning/*"],
-		  "js": ["contentScript.js"]
+		  "js": ["scripts/contentScript.js"]
 		}
 	],
 	"action": {
