@@ -2,7 +2,8 @@
 	"manifest_version": 3,
 	"name": "alx-to-google-calender",
 	"description": "this extension will save the alx schedules to google calender",
-	"version": "0.1",
+	"version": "0.1.0",
+	"permissions": ["tabs"],
 	"action": {
 		"default_icon": {
 		  "16": "img/icon.png",
