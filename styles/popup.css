@@ -1,55 +1,24 @@
-.container {
-    width: 280px;
-    color: #314d3e;
+body {
+    width: 20rem;
   }
   
-  .title {
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px;
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 1rem 0;
   }
   
-  .textbox {
-    width: 100%;
-    font-size: 12px;
+  li {
+    padding: 0.25rem;
+  }
+  li:nth-child(odd) {
+    background: #80808030;
+  }
+  li:nth-child(even) {
+    background: #ffffff;
+  }
+  
+  h3,
+  p {
     margin: 0;
-    padding: 0px 2px;
   }
-  
-  .textbox:focus {
-    outline: 0;
-    border-color: #66afe9;
-  }
-  
-  .bookmarks {
-    margin: 5px 5px;
-    padding: 3px;
-  }
-  
-  .bookmark {
-    display: flex;
-    border-bottom-color: #00254d;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-radius: 0.8rem;
-    padding: 3px;
-    padding-bottom: 7px;
-    margin-bottom: 7px;
-  }
-  
-  .bookmark-title {
-    padding-left: 2px;
-  }
-  
-  .bookmark-controls img {
-    margin: 0 4px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-  }
-  
-  .bookmark-controls {
-    flex: auto;
-    text-align: right;
-  }
-  

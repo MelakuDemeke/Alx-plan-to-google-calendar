@@ -32,7 +32,7 @@
 				"https://intranet.alxswe.com/planning/me"
 			],
 			"js": [
-				"contentScript.js"
+				"scripts/contentScript.js"
 			]
 		}
 	]
