@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
-	"name": "alx-to-google-calender",
-	"description": "this extension will save the alx schedules to google calender",
+	"name": "Alx-plan-to-google-calendar",
+	"description": "this extension will save the alx schedules to google calendar",
 	"version": "0.1.0",
 	"permissions": [
 		"storage",
