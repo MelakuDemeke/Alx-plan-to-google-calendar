@@ -4,8 +4,8 @@
 	"description": "this extension will save the alx schedules to google calendar",
 	"version": "0.1.0",
 	"permissions": [
-		"storage",
-		"activeTab"
+		"activeTab",
+		"tabGroups"
 	],
 	"icons": {
         "16": "images/icon-16.png",
@@ -13,16 +13,9 @@
         "48": "images/icon-48.png",
         "128": "images/icon-128.png"
     },
-	"content_scripts": [
-		{
-			"matches": [
-				"https://intranet.alxswe.com/planning/*"
-			],
-			"js": [
-				"scripts/contentScript.js"
-			]
-		}
-	],
+	"host_permissions": [
+        "https://intranet.alxswe.com/planning/*"
+    ],
 	"action": {
 		"default_popup": "popup.html"
 	}
