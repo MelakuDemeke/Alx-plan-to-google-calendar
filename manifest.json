@@ -5,18 +5,25 @@
 	"version": "0.1.0",
 	"permissions": [
 		"activeTab",
-		"tabGroups"
+		"tabGroups",
+		"scripting"
 	],
 	"icons": {
-        "16": "images/icon-16.png",
-        "32": "images/icon-32.png",
-        "48": "images/icon-48.png",
-        "128": "images/icon-128.png"
-    },
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
 	"host_permissions": [
-        "https://intranet.alxswe.com/planning/*"
-    ],
+		"https://intranet.alxswe.com/planning/*"
+	],
 	"action": {
-		"default_popup": "popup.html"
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"32": "images/icon-32.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		}
 	}
 }
