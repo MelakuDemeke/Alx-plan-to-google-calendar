@@ -15,3 +15,8 @@ elements.forEach(element => {
   const ariaLabel = element.getAttribute("aria-label");
   element.setAttribute("aria-label", `close ${ariaLabel}`);
 });
+
+
+window.onload = function(){
+  console.log("page loaded");
+}
