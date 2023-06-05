@@ -83,6 +83,38 @@ styleElement.textContent = `
     text-decoration: none;
     cursor: pointer;
   }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #23527c;
+  }
+  
 `;
 
 // Append the style element to the document head
@@ -133,7 +165,12 @@ newDiv.addEventListener('click', function () {
   const divwithidpro = document.querySelectorAll('div[event_id^="project-"]');
   const plans = []
   for (let i = 0; i < divwithidpro.length; i++) {
-    plans.push(divwithidpro[i].getAttribute('aria-label'))
+    const planText = divwithidpro[i].getAttribute('aria-label')
+    if(planText === ""){
+      continue
+    }else{
+      plans.push(planText)
+    }
   }
 
   plans.forEach((plan) => {
