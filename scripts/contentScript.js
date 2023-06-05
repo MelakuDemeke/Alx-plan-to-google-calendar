@@ -123,13 +123,13 @@ document.head.appendChild(styleElement);
 // END OF MODAL
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close");
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
   alert(span);
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -166,9 +166,9 @@ newDiv.addEventListener('click', function () {
   const plans = []
   for (let i = 0; i < divwithidpro.length; i++) {
     const planText = divwithidpro[i].getAttribute('aria-label')
-    if(planText === ""){
+    if (planText === "") {
       continue
-    }else{
+    } else {
       plans.push(planText)
     }
   }
@@ -176,10 +176,44 @@ newDiv.addEventListener('click', function () {
   plans.forEach((plan) => {
     // Create the list item element
     const li = document.createElement('li');
-    
-    // Set the text content of the list item to the item value
-    li.textContent = plan;
-    
+    const text = plan;
+
+    // Extract the title
+    const titleStartIndex = 0;
+    const titleEndIndex = text.indexOf(' From :');
+    const title = text.substring(titleStartIndex, titleEndIndex).trim();
+
+    // Extract the date range
+    let dateRange;
+    const openIndex = text.indexOf(' >');
+    if (openIndex !== -1) {
+      dateRange = text.substring(titleEndIndex, openIndex).trim();
+    } else {
+      dateRange = text.substring(titleEndIndex).trim();
+    }
+
+    // Create the title element
+    const headeTitle = document.createElement('h3');
+    headeTitle.textContent = title;
+
+    // Create the date element
+    const date = document.createElement('p');
+    date.textContent = dateRange;
+
+    // Create the button element
+    const button = document.createElement('button');
+    button.textContent = 'Click Me';
+
+    // Add a click event listener to the button
+    button.addEventListener('click', () => {
+      console.log('Button clicked!');
+    });
+
+    // Append the title, date, and button to the list item
+    li.appendChild(headeTitle);
+    li.appendChild(date);
+    li.appendChild(button);
+
     // Append the list item to the unordered list
     ul.appendChild(li);
   });
