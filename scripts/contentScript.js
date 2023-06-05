@@ -119,6 +119,14 @@ span.onclick = function () {
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    var hideheeader = document.getElementsByClassName("dhx_cal_navline");
+    var daylist = document.getElementsByClassName("dhx_cal_header");
+
+    for (var i = 0; i < hideheeader.length; i++) {
+      hideheeader[i].style.display = "block";
+      daylist[i].style.display = "block"
+
+    }
   }
 }
 
@@ -148,6 +156,22 @@ newDiv.addEventListener('click', function () {
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
 
+  var hideheeader = document.getElementsByClassName("dhx_cal_navline");
+  var daylist = document.getElementsByClassName("dhx_cal_header");
+
+  for (var i = 0; i < hideheeader.length; i++) {
+    hideheeader[i].style.display = "none";
+    daylist[i].style.display = "none"
+
+  }
+  var hideheeader = document.getElementsByClassName("dhx_cal_navline");
+  var daylist = document.getElementsByClassName("dhx_cal_header");
+
+  for (var i = 0; i < hideheeader.length; i++) {
+    hideheeader[i].style.display = "none";
+    daylist[i].style.display = "none"
+
+  }
   var ul = document.getElementById("schedules");
   const divwithidpro = document.querySelectorAll('div[event_id^="project-"]');
   const plans = []
