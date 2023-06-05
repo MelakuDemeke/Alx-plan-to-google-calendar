@@ -83,36 +83,23 @@ styleElement.textContent = `
     text-decoration: none;
     cursor: pointer;
   }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
   li {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 10px;
   }
-  
-  h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
+
+  h3, p, button {
+    margin: 5px 0;
   }
-  
-  p {
-    margin: 0;
-    font-size: 14px;
-    color: #888;
-  }
-  
+
   button {
-    padding: 8px 16px;
-    background-color: #337ab7;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #23527c;
+    width: 150px
   }
   
 `;
@@ -202,11 +189,11 @@ newDiv.addEventListener('click', function () {
 
     // Create the button element
     const button = document.createElement('button');
-    button.textContent = 'Click Me';
+    button.textContent = 'Add to Google Calender';
 
     // Add a click event listener to the button
     button.addEventListener('click', () => {
-      console.log('Button clicked!');
+      alert(date.innerText);
     });
 
     // Append the title, date, and button to the list item
