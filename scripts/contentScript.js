@@ -99,7 +99,9 @@ styleElement.textContent = `
   }
 
   button {
-    width: 150px
+    display: inline-block;
+    width: fit-content;
+    height: 30px;
   }
   
 `;
