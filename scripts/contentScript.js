@@ -64,10 +64,10 @@ styleElement.textContent = `
   
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% 30%;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
   }
   
   .close {
