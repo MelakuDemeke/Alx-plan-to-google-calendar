@@ -13,7 +13,7 @@ for (let i = 0; i < h1Tags.length; i++) {
 // Create the main div element with id "myModal" and class "modal"
 const mainDiv = document.createElement('div');
 mainDiv.id = 'myModal';
-mainDiv.className = 'modal';
+mainDiv.className = 'schedulemodal';
 
 // Create the modal content div element with class "modal-content"
 const modalContentDiv = document.createElement('div');
@@ -49,7 +49,7 @@ document.body.appendChild(mainDiv);
 // Add the CSS styles
 const styleElement = document.createElement('style');
 styleElement.textContent = `
-  .modal {
+  .schedulemodal {
     display: none;
     position: fixed;
     z-index: 1;
