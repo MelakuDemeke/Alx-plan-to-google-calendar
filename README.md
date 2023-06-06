@@ -2,6 +2,17 @@
 # Alx-plan-to-google-calendar
 This is a Chrome extension that allows you to easily import calendar schedules from Alx into your Google Calendar. With this extension, you can synchronize your Alx schedules with your Google Calendar, ensuring that you never miss an important event.
 
+## Table of Contents
+- [Alx-plan-to-google-calendar](#alx-plan-to-google-calendar)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributions](#contributions)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
+  - [Contact](#contact)
+  - [contributors](#contributors)
+
 ## Installation
 
 1. Download the latest release of the extension from the [releases page](https://github.com/MelakuDemeke/Alx-plan-to-google-calendar/releases).
