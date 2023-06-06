@@ -249,14 +249,6 @@ newDiv.addEventListener('click', function () {
 parentDiv.appendChild(newDiv);
 
 
-const divwithidpro = document.querySelectorAll('div[event_id^="project-"]');
-
-// Iterate through each h1 tag and change the text
-for (let i = 0; i < divwithidpro.length; i++) {
-  // console.log(divwithidpro[i].getAttribute('aria-label'))
-  chrome.runtime.sendMessage({ data: divwithidpro[i].getAttribute('aria-label') });
-}
-
 function closeModal() {
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
