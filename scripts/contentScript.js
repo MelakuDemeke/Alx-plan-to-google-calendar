@@ -178,7 +178,9 @@ newDiv.addEventListener('click', function () {
     }
   }
 
-  plans.forEach((plan) => {
+  cleanPlan = doubleClener(plans);
+  
+  cleanPlan.forEach((plan) => {
     // Create the list item element
     const li = document.createElement('li');
     const text = plan;
@@ -215,7 +217,7 @@ newDiv.addEventListener('click', function () {
     // Extract the "to date"
     fromIndex = dateString.lastIndexOf(":") + 1;
     var toDate = dateString.substring(fromIndex).trim();
-    
+
     // Create the button element
     const button = document.createElement('button');
     button.textContent = 'Add to Google Calender';
@@ -264,4 +266,51 @@ const divwithidpro = document.querySelectorAll('div[event_id^="project-"]');
 for (let i = 0; i < divwithidpro.length; i++) {
   // console.log(divwithidpro[i].getAttribute('aria-label'))
   chrome.runtime.sendMessage({ data: divwithidpro[i].getAttribute('aria-label') });
+}
+
+function doubleClener(inputData) {
+
+  var combinedEntries = {};
+
+  // Loop through each element in the input data array
+  for (var i = 0; i < inputData.length; i++) {
+    var element = inputData[i].trim();
+
+    // Skip empty elements or elements without the "From" keyword
+    if (element === '' || !element.includes('From')) {
+      continue;
+    }
+
+    // Extract the project name, start date, and end date
+    var projectName = element.substring(0, element.indexOf(' From'));
+    var startDate = element.match(/From : (\d{4}-\d{2}-\d{2})/)[1];
+    var endDate = element.match(/To : (\d{4}-\d{2}-\d{2})/)[1];
+
+    // Check if the project name already exists in the combined entries
+    if (combinedEntries.hasOwnProperty(projectName)) {
+      // Update the end date if the current element has a later end date
+      if (endDate > combinedEntries[projectName].endDate) {
+        combinedEntries[projectName].endDate = endDate;
+      }
+    } else {
+      // Add a new entry to the combined entries
+      combinedEntries[projectName] = {
+        startDate: startDate,
+        endDate: endDate
+      };
+    }
+  }
+
+  // Generate the combined output as an array
+  var combinedOutput = [];
+  for (var projectName in combinedEntries) {
+    if (combinedEntries.hasOwnProperty(projectName)) {
+      var entry = combinedEntries[projectName];
+      var output = projectName + ' From : ' + entry.startDate + ' To : ' + entry.endDate;
+      combinedOutput.push(output);
+    }
+  }
+
+  return combinedOutput;
+
 }
