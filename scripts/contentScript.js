@@ -23,6 +23,9 @@ modalContentDiv.className = 'modal-content';
 const closeSpan = document.createElement('span');
 closeSpan.className = 'close';
 closeSpan.textContent = '×'; // This represents the close symbol (times sign)
+closeSpan.addEventListener('click', function () {
+  closeModal()
+})
 
 // Create the paragraph element with some text
 const paragraph = document.createElement('p');
@@ -120,15 +123,20 @@ span.onclick = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
-    var hideheeader = document.getElementsByClassName("dhx_cal_navline");
-    var daylist = document.getElementsByClassName("dhx_cal_header");
+    closeModal();
+  }
+}
 
-    for (var i = 0; i < hideheeader.length; i++) {
-      hideheeader[i].style.display = "block";
-      daylist[i].style.display = "block"
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+  var hideheeader = document.getElementsByClassName("dhx_cal_navline");
+  var daylist = document.getElementsByClassName("dhx_cal_header");
 
-    }
+  for (var i = 0; i < hideheeader.length; i++) {
+    hideheeader[i].style.display = "block";
+    daylist[i].style.display = "block"
+
   }
 }
 
