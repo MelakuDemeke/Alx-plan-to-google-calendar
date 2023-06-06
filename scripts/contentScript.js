@@ -42,6 +42,10 @@ document.body.appendChild(mainDiv);
 // Add the CSS styles
 const styleElement = document.createElement('style');
 styleElement.textContent = `
+  .schedules li.even {
+    background-color: #f5f5f5;
+  }
+
   .schedulemodal {
     display: none;
     position: fixed;
@@ -219,6 +223,16 @@ newDiv.addEventListener('click', function () {
 
     // Append the list item to the unordered list
     ul.appendChild(li);
+  });
+  const scheduleList = document.querySelector('.schedules');
+  const scheduleItems = scheduleList.querySelectorAll('li');
+
+  scheduleItems.forEach((item, index) => {
+    if (index % 2 === 0) {
+      item.classList.add('even');
+    } else {
+      item.classList.remove('even');
+    }
   });
 
 });
