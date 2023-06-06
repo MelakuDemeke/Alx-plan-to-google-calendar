@@ -205,14 +205,43 @@ newDiv.addEventListener('click', function () {
     const date = document.createElement('p');
     date.textContent = dateRange;
 
+    var dateString = dateRange;
+
+    // Extract the "from date"
+    var fromIndex = dateString.indexOf(":") + 1;
+    var toIndex = dateString.indexOf("To");
+    var fromDate = dateString.substring(fromIndex, toIndex).trim();
+
+    // Extract the "to date"
+    fromIndex = dateString.lastIndexOf(":") + 1;
+    var toDate = dateString.substring(fromIndex).trim();
+    
     // Create the button element
     const button = document.createElement('button');
     button.textContent = 'Add to Google Calender';
-
-    // Add a click event listener to the button
     button.addEventListener('click', () => {
-      alert(date.innerText);
+      var startDate = new Date(fromDate);
+      var endDate = new Date(toDate);
+      var eventTitle = title;
+      var eventDescription = 'Event Description';
+      var eventLocation = 'Event Location';
+
+      var googleCalendarUrl = 'https://www.google.com/calendar/render?action=TEMPLATE' +
+        '&text=' + encodeURIComponent(eventTitle) +
+        '&dates=' + formatGoogleCalendarDate(startDate) + '/' + formatGoogleCalendarDate(endDate) +
+        '&details=' + encodeURIComponent(eventDescription) +
+        '&location=' + encodeURIComponent(eventLocation);
+
+      window.open(googleCalendarUrl, '_blank');
     });
+
+    function formatGoogleCalendarDate(date) {
+      var year = date.getFullYear();
+      var month = (date.getMonth() + 1).toString().padStart(2, '0');
+      var day = date.getDate().toString().padStart(2, '0');
+
+      return year + month + day;
+    }
 
     // Append the title, date, and button to the list item
     li.appendChild(headeTitle);
