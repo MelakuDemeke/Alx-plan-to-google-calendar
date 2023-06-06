@@ -211,13 +211,14 @@ newDiv.addEventListener('click', function () {
 
     // Create the button element
     const button = document.createElement('button');
+    button.className = "btn btn-primary"
     button.textContent = 'Add to Google Calender';
     button.addEventListener('click', () => {
       var startDate = new Date(fromDate);
       var endDate = new Date(toDate);
       var eventTitle = title;
-      var eventDescription = 'Event Description';
-      var eventLocation = 'Event Location';
+      var eventDescription = 'Alx project schedule';
+      var eventLocation = 'https://intranet.alxswe.com/';
 
       var googleCalendarUrl = 'https://www.google.com/calendar/render?action=TEMPLATE' +
         '&text=' + encodeURIComponent(eventTitle) +
