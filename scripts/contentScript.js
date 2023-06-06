@@ -111,18 +111,7 @@ window.onclick = function (event) {
   }
 }
 
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  var hideheeader = document.getElementsByClassName("dhx_cal_navline");
-  var daylist = document.getElementsByClassName("dhx_cal_header");
 
-  for (var i = 0; i < hideheeader.length; i++) {
-    hideheeader[i].style.display = "block";
-    daylist[i].style.display = "block"
-
-  }
-}
 
 // add button to export to google calender
 
@@ -179,7 +168,7 @@ newDiv.addEventListener('click', function () {
   }
 
   cleanPlan = doubleClener(plans);
-  
+
   cleanPlan.forEach((plan) => {
     // Create the list item element
     const li = document.createElement('li');
@@ -266,6 +255,19 @@ const divwithidpro = document.querySelectorAll('div[event_id^="project-"]');
 for (let i = 0; i < divwithidpro.length; i++) {
   // console.log(divwithidpro[i].getAttribute('aria-label'))
   chrome.runtime.sendMessage({ data: divwithidpro[i].getAttribute('aria-label') });
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+  var hideheeader = document.getElementsByClassName("dhx_cal_navline");
+  var daylist = document.getElementsByClassName("dhx_cal_header");
+
+  for (var i = 0; i < hideheeader.length; i++) {
+    hideheeader[i].style.display = "block";
+    daylist[i].style.display = "block"
+
+  }
 }
 
 function doubleClener(inputData) {
