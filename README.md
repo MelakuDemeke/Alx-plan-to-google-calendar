@@ -21,10 +21,10 @@ This is a Chrome extension that allows you to easily import calendar schedules f
 1. Navigate to your Alx schedule page.
 
 2. Click on the the button `export to google calender` that is render beside the filter buttons
-   ![schedule page](images/mainpage.png)
 
 3. it will open a modal with all schedules and all you need to do is add the schedule you want
-   ![list of schedules](images/listoftasks.png)
+
+![banner](images/alx-to-google.gif)
 
 
 ## Contributions
