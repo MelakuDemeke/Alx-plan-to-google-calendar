@@ -229,14 +229,6 @@ newDiv.addEventListener('click', function () {
       window.open(googleCalendarUrl, '_blank');
     });
 
-    function formatGoogleCalendarDate(date) {
-      var year = date.getFullYear();
-      var month = (date.getMonth() + 1).toString().padStart(2, '0');
-      var day = date.getDate().toString().padStart(2, '0');
-
-      return year + month + day;
-    }
-
     // Append the title, date, and button to the list item
     li.appendChild(headeTitle);
     li.appendChild(date);
@@ -251,6 +243,13 @@ newDiv.addEventListener('click', function () {
 // Append the new div as a child of the parent div
 parentDiv.appendChild(newDiv);
 
+function formatGoogleCalendarDate(date) {
+  var year = date.getFullYear();
+  var month = (date.getMonth() + 1).toString().padStart(2, '0');
+  var day = date.getDate().toString().padStart(2, '0');
+
+  return year + month + day;
+}
 
 function closeModal() {
   var modal = document.getElementById("myModal");
