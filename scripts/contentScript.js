@@ -1,13 +1,3 @@
-// Get all h1 tags on the page
-const h1Tags = document.getElementsByTagName('h1');
-
-// Iterate through each h1 tag and change the text
-for (let i = 0; i < h1Tags.length; i++) {
-  const h1Tag = h1Tags[i];
-  chrome.runtime.sendMessage({ data: h1Tag.innerText });
-  h1Tag.innerText = 'Modified H1';
-}
-
 // CREATE A MODAL
 
 // Create the main div element with id "myModal" and class "modal"
