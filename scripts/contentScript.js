@@ -120,22 +120,11 @@ const parentDiv = document.querySelector('.dhx_cal_navline');
 
 // Create the new div element
 const newDiv = document.createElement('div');
-newDiv.className = '';
+newDiv.className = 'btn btn-primary';
 newDiv.setAttribute('aria-label', 'Today');
 newDiv.setAttribute('role', 'button');
 newDiv.textContent = 'export to google calender';
 
-
-newDiv.style.padding = '10px 20px';
-newDiv.style.display = 'inline-block';
-newDiv.style.margin = '0 350px';
-newDiv.style.backgroundColor = '#E0003C';
-newDiv.style.color = '#fff';
-newDiv.style.fontWeight = 'bold';
-newDiv.style.fontSize = "12px"
-newDiv.style.cursor = 'pointer';
-newDiv.style.border = 'none';
-newDiv.style.borderRadius = '4px';
 
 newDiv.addEventListener('click', function () {
   var modal = document.getElementById("myModal");
