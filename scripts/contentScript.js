@@ -125,6 +125,8 @@ newDiv.setAttribute('aria-label', 'Today');
 newDiv.setAttribute('role', 'button');
 newDiv.textContent = 'export to google calender';
 
+newDiv.style.padding = '10px 20px';
+newDiv.style.margin = '0 350px';
 
 newDiv.addEventListener('click', function () {
   var modal = document.getElementById("myModal");
