@@ -18,7 +18,7 @@ closeSpan.addEventListener('click', function () {
 })
 
 // Create the paragraph element with some text
-const paragraph = document.createElement('p');
+const paragraph = document.createElement('h1');
 paragraph.textContent = 'This month schedules of Alx';
 
 
@@ -101,16 +101,10 @@ styleElement.textContent = `
 
 // Append the style element to the document head
 document.head.appendChild(styleElement);
-
 // END OF MODAL
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close");
-span.onclick = function () {
-  modal.style.display = "none";
-  alert(span);
-}
 
 // When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById("myModal");
 window.onclick = function (event) {
   if (event.target == modal) {
     closeModal();
